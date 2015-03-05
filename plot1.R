@@ -4,6 +4,7 @@ names(format)[1] <- "time"
 startDate <- as.POSIXlt("2007-02-01 00:00:00")
 endDate <- as.POSIXlt("2007-02-03 00:00:00")
 timeFrame <- subset(format, time >= startDate & time < endDate)
+png("plot1.png", width = 3.25, height = 3.25, units = "in", res = 1200, pointsize = 4)
+par(mfrow=c(1, 1))
 hist(timeFrame$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
-dev.copy(png,'plot1.png')
 dev.off()

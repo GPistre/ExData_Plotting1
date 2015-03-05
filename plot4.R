@@ -4,14 +4,7 @@ names(format)[1] <- "time"
 startDate <- as.POSIXlt("2007-02-01 00:00:00")
 endDate <- as.POSIXlt("2007-02-03 00:00:00")
 timeFrame <- subset(format, time >= startDate & time < endDate)
-png(
-  "test.png",
-  width     = 3.25,
-  height    = 3.25,
-  units     = "in",
-  res       = 1200,
-  pointsize = 4
-)
+png("plot4.png", width = 3.25, height = 3.25, units = "in", res = 1200, pointsize = 4)
 
 par(mfrow=c(2, 2), lwd = 0.5)
 plot(timeFrame$time, timeFrame$Global_active_power, type = "l", ylab = "Global Active Power", xlab = "")
